@@ -2,18 +2,17 @@ package com.backendforfooddelci.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
+import com.backendforfooddelci.Entity.FoodMenu;
+import com.backendforfooddelci.Repository.MenuForRestaurantRepository;
 
-import com.backendforfooddelci.Entity.Menuforrestotant;
-import com.backendforfooddelci.Repository.MenuRepository;
 
 @Service
 public class MenuService {
 	
 	@Autowired
-	private MenuRepository service;
+	private MenuForRestaurantRepository service;
 	
-	public Menuforrestotant  createmenu(Menuforrestotant menu, String fileName) {
+	public FoodMenu  createmenu(FoodMenu menu, String fileName) {
 		
 		menu.setFoodImage(fileName);
 	

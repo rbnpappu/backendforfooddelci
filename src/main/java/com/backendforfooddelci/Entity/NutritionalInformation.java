@@ -16,26 +16,29 @@ import lombok.Setter;
 @Getter
 @Setter
 public class NutritionalInformation {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "nutri_id")
-	private long id;
-	
-	@Column(name="calories")
-	private String calories;
-	
-	@Column(name="fat")
-	private String fat;
-	
-	@Column(name="protein")
-	private String protein;
-	
-	@Column(name="carbohydrates")
-	private String carbohydrates;
-	
-	  @OneToOne
-	  @JoinColumn(name = "food_id")
-	  private Menuforrestotant food;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="nutriInfo_id")
+    private long id;
+    
+    @Column(name="calories")
+    private String calories;
+    
+    @Column(name="fat")
+    private String fat;
+    
+    @Column(name="protein")
+    private String protein;
+    
+    @Column(name="carbohydrates")
+    private String carbohydrates;
+    
+    @Column(name="cholesterol")
+    private String cholesterol;
+    
+    @OneToOne
+    @JoinColumn(name = "food_id")
+    private FoodMenu food;
 
 	public long getId() {
 		return id;
@@ -77,30 +80,30 @@ public class NutritionalInformation {
 		this.carbohydrates = carbohydrates;
 	}
 
-	public Menuforrestotant getFood() {
-		return food;
+	public String getCholesterol() {
+		return cholesterol;
 	}
 
-	public void setFood(Menuforrestotant food) {
-		this.food = food;
+	public void setCholesterol(String cholesterol) {
+		this.cholesterol = cholesterol;
 	}
 
 	public NutritionalInformation(long id, String calories, String fat, String protein, String carbohydrates,
-			Menuforrestotant food) {
+			String cholesterol) {
 		super();
 		this.id = id;
 		this.calories = calories;
 		this.fat = fat;
 		this.protein = protein;
 		this.carbohydrates = carbohydrates;
-		this.food = food;
+		this.cholesterol = cholesterol;
 	}
 
 	public NutritionalInformation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	  
-	  
+
+	
 
 }

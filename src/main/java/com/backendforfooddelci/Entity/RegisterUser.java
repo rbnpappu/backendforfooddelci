@@ -31,7 +31,10 @@ public class RegisterUser {
 
     @Column(name = "user_name", nullable = false, unique = true)
     private String userName;
-
+    
+    @Column(name = "email", nullable= false)
+    private String email;
+    
     @Column(name = "password", nullable = false)
     private String password;
 
@@ -50,17 +53,6 @@ public class RegisterUser {
         // Default constructor body (if needed)
     }
 
-
-
-	public RegisterUser(Long id, String userName, String password, String retypePassword, Set<RegisterUserRole> roles) {
-		super();
-		this.id = id;
-		this.userName = userName;
-		this.password = password;
-		this.retypePassword = retypePassword;
-		this.roles = roles;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -75,6 +67,14 @@ public class RegisterUser {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -100,6 +100,19 @@ public class RegisterUser {
 	public void setRoles(Set<RegisterUserRole> roles) {
 		this.roles = roles;
 	}
+
+	public RegisterUser(Long id, String userName, String email, String password, String retypePassword,
+			Set<RegisterUserRole> roles) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.email = email;
+		this.password = password;
+		this.retypePassword = retypePassword;
+		this.roles = roles;
+	}
+
+
 
 
 

@@ -32,4 +32,6 @@ public class SignUpService {
     public Iterable<RegisterUser> getAdminUser(){
     	return service.findAll();
     }
+    
+    
 }

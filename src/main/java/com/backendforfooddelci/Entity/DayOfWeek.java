@@ -10,30 +10,27 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="DayOfWeek")
+@Table(name = "Day_ofWeek")
 public class DayOfWeek {
-	
-	
-	   @Id
-	   @GeneratedValue(strategy = GenerationType.IDENTITY)
-	   
-	   @Column(name="id")
-	   private Long id;
-	   
-	  @Column(name="start") 
-	  private String start;
-	  
-	  @Column(name="end")
-	  private String end;
-	  
-	  @OneToOne
-	  @JoinColumn(name = "operatingTime_id")
-	  private OperatingTimeForRestrotant operatingTime;
-
-	public DayOfWeek() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    
+    @Column(name = "start_day_of_week")
+    private String startDayOfWeek;
+    
+    @Column(name = "end_day_of_week")
+    private String endDayOfWeek;
+    
+    @OneToOne
+    @JoinColumn(name = "operatingTime_id")
+    private OperatingTimeForRestaurant operatingTime;
+    
+    public DayOfWeek() {
+        super();
+    }
 
 	public Long getId() {
 		return id;
@@ -43,38 +40,28 @@ public class DayOfWeek {
 		this.id = id;
 	}
 
-	public String getStart() {
-		return start;
+	public String getStartDayOfWeek() {
+		return startDayOfWeek;
 	}
 
-	public void setStart(String start) {
-		this.start = start;
+	public void setStartDayOfWeek(String startDayOfWeek) {
+		this.startDayOfWeek = startDayOfWeek;
 	}
 
-	public String getEnd() {
-		return end;
+	public String getEndDayOfWeek() {
+		return endDayOfWeek;
 	}
 
-	public void setEnd(String end) {
-		this.end = end;
+	public void setEndDayOfWeek(String endDayOfWeek) {
+		this.endDayOfWeek = endDayOfWeek;
 	}
 
-	public OperatingTimeForRestrotant getOperatingTime() {
-		return operatingTime;
-	}
-
-	public void setOperatingTime(OperatingTimeForRestrotant operatingTime) {
-		this.operatingTime = operatingTime;
-	}
-
-	public DayOfWeek(Long id, String start, String end, OperatingTimeForRestrotant operatingTime) {
+	public DayOfWeek(Long id, String startDayOfWeek, String endDayOfWeek) {
 		super();
 		this.id = id;
-		this.start = start;
-		this.end = end;
-		this.operatingTime = operatingTime;
+		this.startDayOfWeek = startDayOfWeek;
+		this.endDayOfWeek = endDayOfWeek;
 	}
-
-	
-
+    
+   
 }
